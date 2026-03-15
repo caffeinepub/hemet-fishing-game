@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("/assets/fonts/DMSerifDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    /* Deep lake night sky theme */
+    --background: 0.1 0.025 220;
+    --foreground: 0.95 0.02 90;
+
+    --card: 0.15 0.03 218;
+    --card-foreground: 0.95 0.02 90;
+
+    --popover: 0.15 0.03 218;
+    --popover-foreground: 0.95 0.02 90;
+
+    --primary: 0.5 0.14 210;
+    --primary-foreground: 0.98 0.01 90;
+
+    --secondary: 0.22 0.035 215;
+    --secondary-foreground: 0.85 0.04 210;
+
+    --muted: 0.2 0.025 215;
+    --muted-foreground: 0.62 0.06 210;
+
+    --accent: 0.68 0.17 58;
+    --accent-foreground: 0.12 0.04 58;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --success: 0.58 0.18 145;
+
+    --border: 0.26 0.04 215;
+    --input: 0.24 0.04 215;
+    --ring: 0.5 0.14 210;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Game canvas utilities */
+.game-container {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Bite animation pulse */
+@keyframes bite-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(239, 68, 68, 0.8);
+  }
+}
+.bite-pulse {
+  animation: bite-pulse 0.4s ease-in-out infinite;
+}
+
+/* Water shimmer */
+@keyframes shimmer {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
